@@ -1,0 +1,39 @@
+{
+  "name": "projeto-tailwind-v4",
+  "version": "1.0.0",
+  "description": "Projeto de conclusão de curso do tailwind utilizando a versão 4",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch",
+    "tailwind:prod": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch --minify",
+    "watch": "npm-run-all --parallel dev open",
+    "dev": "mix watch",
+    "prod": "mix --production -- --watch --progress",
+    "dev:runall": "npm-run-all --parallel tailwind build:js",
+    "prod:runall": "npm-run-all --parallel tailwind:prod build:js",
+    "lint:fix": "eslint --fix --ext .js,.jsx"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.19",
+    "eslint": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-webpack-plugin": "^4.2.0",
+    "laravel-mix": "^6.0.49",
+    "prettier": "^3.3.3",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.1",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^4.1.14"
+  }
+}

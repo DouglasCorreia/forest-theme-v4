@@ -1,0 +1,122 @@
+@import "tailwindcss";
+/* Caso queria usar o arquivo de configuração da versão 3 */
+/*@config "../../../tailwind.config.js";*/
+
+@theme {
+  --color-blue-200: #A5D8FF;
+  --color-blue-300: #74C0FC;
+  --color-blue-400: #339AF0;
+  --color-blue-700: #1C3F5F;
+  --color-blue-800: #12283A;
+  --color-blue-900: #0B1A26;
+  --color-blue-950: #03070C;
+
+  --font-sans: 'DM Sans', 'system-ui', 'sans-serif';
+  --font-serif: 'DM Serif Text', 'Georgia', 'serif';
+
+  --container-center: true;
+  --container-padding: 15px;
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 992px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1200px;
+
+  --animate-slide-in: slideIn 0.4s ease-in-out forwards;
+  --animate-fade-in: fadeIn 0.4s ease-in-out forwards;
+
+  @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: 'translateX(-20px)';
+      }
+      100% {
+        opacity: 1;
+        transform: 'translateX(0px)';
+      }
+    }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  .container {
+     @apply mx-auto px-4 xs:max-w-[480px] sm:max-w-[768px] md:max-w-[992px] lg:max-w-[1024px] xl:max-w-[1200px];
+  }
+
+  .animate-delay-1 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-2 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-3 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-4 {
+    animation-delay: 400ms;
+  }
+}
+
+@layer components {
+  .neon {
+    @apply rounded-full border border-blue-200 bg-linear-to-b from-blue-200 to-blue-400;
+    box-shadow: 0 1px 4px 1px rgba(var(--color-blue-200), 0.25),
+      inset 0px -1px 2px var(--color-blue-200);
+  }
+
+  .btn {
+    @apply rounded-full border border-blue-200 bg-linear-to-b from-blue-200 to-blue-400 px-5 py-2 text-blue-900 transition hover:contrast-200;
+    box-shadow: 0 1px 4px 1px rgba(var(--color-blue-200), 0.25),
+      inset 0px -1px 2px var(--color-blue-200);
+  }
+
+  .input {
+    @apply rounded-md border-2 border-blue-800 bg-blue-800 p-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-900 placeholder:text-blue-900;
+  }
+
+  .radial-gradient {
+    @apply bg-radial-[50%_100%_at_50%_0%] from-blue-700 to-blue-800
+  }
+}
+
+@media (min-width: 480px) {
+  :root {
+    --container-max-width: 480px;
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --container-max-width: 768px;
+  }
+}
+
+@media (min-width: 992px) {
+  :root {
+    --container-max-width: 992px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --container-max-width: 1024px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --container-max-width: 1200px;
+  }
+}
